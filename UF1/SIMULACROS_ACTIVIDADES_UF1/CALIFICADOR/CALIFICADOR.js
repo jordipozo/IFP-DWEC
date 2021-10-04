@@ -6,6 +6,10 @@ function calificar() {
 
     // El comando SWITCH permite múltiples comparaciones en función de un valor/variable determinado
     switch (true) {
+        // Primero controlamos los márgenes del tramo (menor que 0 y mayor que 10)
+        case notaNumerica<0 || notaNumerica>10 :
+            alert('Nota errónea. Vuelva a intentarlo');
+            break;
         case notaNumerica >= 0 && notaNumerica < 5:
             alert('Suspendido');
             break;
