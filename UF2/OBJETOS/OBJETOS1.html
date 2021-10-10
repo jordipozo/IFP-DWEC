@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJETOS EN JAVASCRIPT - 1</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // Usando pares del tipo "clave : valor"
+    // Creación de objetos mediante funciones
+    function devuelveNombreCompleto(){ // Creación de método (previo a la definición del objeto)
+            return("Marca : " + this.fabricante + " Modelo: "+ this.modelo);
+        }
+    function Coche (fabricante, modelo, tipo){
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+        this.tipo = tipo;
+
+        this.devuelveNombreCompleto=devuelveNombreCompleto;
+    }
+   
+    var miCoche = new Coche('SEAT','Altea XL','Turismo');
+    alert ('Mi coche es un '+ miCoche.fabricante + " "+ miCoche.modelo+" y es de tipo "+ miCoche.tipo);
+    alert (miCoche.devuelveNombreCompleto());
+    //----------------------------------------------------//
+    // Creación de objeto mediante let/var
+
+    let persona = {  // Podemos utilizar también -var- para declarar el objeto. Cambia el ámbito.
+        nombre: "Juan",
+        apellido1: "Martínez",
+        apellido2: "Pérez",
+        edad: 25,
+        
+        devuelveNombreCompleto: function(){ // Método que retorna el nombre y los dos apellidos
+            return (this.nombre+" "+this.apellido1+" "+this.apellido2);
+        }
+    };
+    alert('El nombre de este objeto Persona es: '+ persona.nombre + ' ' + persona.apellido1);
+    alert(persona.devuelveNombreCompleto()); // Llamada al método.
+    // ----------------------------------------------------------//
+
+    // Creación de objeto mediante Object.create()
+    var mascota = {
+        nombre: 'Perry',
+        tipo: 'Perro',
+
+        mostrarTipo: function(){
+            alert(this.tipo);
+        }
+    }
+    
+    function saluda(){
+        alert('Me llamo '+ this.nombre + ' y soy un '+ this.tipo);
+    }
+
+    var chuchi = Object.create(mascota);
+    chuchi.mostrarTipo();
+
+    var pescadito = Object.create(mascota);
+    pescadito.nombre = 'Peci'; // Modificamos la propiedad nombre de esta nueva mascota
+    pescadito.tipo = 'Pez';   // Modificamos la propiedad tipo de esta nueva mascota
+    pescadito.mostrarTipo();
+
+    chuchi.saluda = saluda;
+    pescadito.saluda = saluda;
+
+    chuchi.saluda();
+    pescadito.saluda();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Array Multidimensional</title>
+    <script type="text/javascript">
+        function multidimensionalArray(table) {
+            document.write("<b>Ejemplo para mostrar un Array Multidimensional</b>"+"<br>");
+            document.write("<table border=1>");
+            document.write("<th>S.no</th><th>Nombre</th><th>Teléfono</th><th>Compañía</th>");
+            for(var x=1; x<=3; x++) {
+                document.write("<tr><td>",x,"</td>");
+                for(var y=0; y<=2; y++){
+                    document.write("<td>",table[x][y],"</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        var array1 = new Array("Girish","971999","La comercial");
+        var array2 = new Array("Mahendra","971988","La comercial");
+        var array3 = new Array("Komal","971977","La comercial");
+        var newarray = new Array("",array1,array2,array3);
+        multidimensionalArray(newarray);
+
+        var arrayRapido = [10,'a','Hola Mundo en un Array'];
+        document.write("Contenido de los componentes del arrayRapido <br>")
+        document.write("Componente 0: " + arrayRapido[0] + "<br>");
+        document.write("Componente 1: " + arrayRapido[1] + "<br>");
+        document.write("Componente 2: " + arrayRapido[2] + "<br>");
+    </script>
+</head>
+<body>
+</body>
+</html>
