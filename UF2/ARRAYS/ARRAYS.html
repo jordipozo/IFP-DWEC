@@ -27,6 +27,64 @@
         document.write("Componente 0: " + arrayRapido[0] + "<br>");
         document.write("Componente 1: " + arrayRapido[1] + "<br>");
         document.write("Componente 2: " + arrayRapido[2] + "<br>");
+        document.write("Longitud del arrayRapido: "+ arrayRapido.length+"<br>");
+        
+        // --- PUSH
+        var pizzas = new Array("Carbonara", "Quattro_Stagioni",  "Diavola");
+        var nuevo_numero_de_pizzas = pizzas.push("Margherita",  "Boscaiola");
+        document.write("Número de pizzas disponibles: " + nuevo_numero_de_pizzas + "<br />");
+        document.write(pizzas+ "<br />");
+
+        //--- CONCAT
+        var equipos_a = new Array("Real Madrid", "Barcelona",  "Valencia");
+        var equipos_b = new Array("Hércules", "Elche",  "Valladolid");
+        var equipos_copa_del_rey = equipos_a.concat(equipos_b);
+        document.write("Equipos que juegan la copa: " +equipos_copa_del_rey+ "<br />");
+
+        //--- JOIN
+
+        var pizzas = new Array("Carbonara", "Quattro_Stagioni",  "Diavola");
+        document.write(pizzas.join(" - ")+ "<br />");
+
+        //--- REVERSE
+        var numeros = new Array(1,2,3,4,5,6,7,8,9,10);  
+        numeros.reverse();
+        document.write(numeros + "<br/>");
+
+        //--- UNSHIFT
+        var sedes_JJOO = new Array("Atenas", "Sydney",  "Atlanta");
+        var numero_sedes = sedes_JJOO.unshift("Pekín");  
+        document.write("Últimas " + numero_sedes + " sedes olímpicas: " + sedes_JJOO);
+        document.write("<br/>");
+
+        //--- SHIFT
+        var pizzas = new Array("Carbonara", "Quattro_Stagioni",  "Diavola");
+        var pizza_removida = pizzas.shift();  
+        document.write("Pizza eliminada de la lista: " +pizza_removida + "<br/>");
+        document.write("Nueva lista de pizzas: " + pizzas);
+        document.write("<br/>");
+
+        //--- POP
+        var premios = new Array("Coche", "1000 Euros", "Manual de  JavaScript");
+        var tercer_premio = premios.pop();
+        document.write("El tercer premio es: " + tercer_premio +  "<br />");
+        document.write("Quedan los siguientes premios: " + premios);
+        document.write("<br/>");
+
+        //--- SLICE
+        var numeros = new Array(1,2,3,4,5,6,7,8,9,10);  
+        var primeros_cinco = numeros.slice(0,5);
+        var ultimos_cuatro = numeros.slice(-4);  
+        document.write(primeros_cinco + "<br>");  
+        document.write(ultimos_cuatro);
+        document.write("<br/>");
+        
+        //--- SORT
+        var apellidos = new Array("Pérez", "Guijarro", "Arias","González");  
+        apellidos.sort();  
+        document.write(apellidos);
+        document.write("<br/>");
+
     </script>
 </head>
 <body>

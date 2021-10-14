@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos en JavaScript</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // Creación de objetos mediante funciones-- FUNCIÓN CONSTRUCTORA
+     function Coche (fabricante, modelo, tipo){
+         this.fabricante= fabricante;
+         this.modelo= modelo;
+         this.tipo= tipo;
+     }
+     var miCoche = new Coche('SEAT','Ibiza','Turismo');
+     alert('Mi coche es un '+ miCoche.fabricante + ' '+ miCoche.modelo + ' y es un ' + miCoche.tipo);
+     miCoche.color="azul";
+     alert('Mi coche es un '+ miCoche.fabricante + ' '+ miCoche.modelo + ' y es de color ' + miCoche.color);
+     var miNuevoCoche = new Coche('VW','Tuareg','TodoTerreno');
+     alert('Mi coche es un '+ miNuevoCoche.fabricante + ' '+ miNuevoCoche.modelo + ' y es un ' + miNuevoCoche.tipo);
+    //----------------------------------------------------//
+    
+    // Creación de objeto mediante let/var-- OBJECT LITERAL
+    let persona = {  
+        nombre: "Juan",
+        apellido1: "Martínez",
+        apellido2: "Pérez",
+        edad: 25
+        }; 
+    alert('El nombre de este objeto Persona es: '+ persona.nombre + ' ' + persona.apellido1);
+    // ----------------------------------------------------------//
+
+    // Creación de objeto mediante Object.create()
+    var mascota = {
+        nombre: 'Perry',
+        tipo: 'Perro'
+    }
+
+    var chuchi = Object.create(mascota);
+    alert('Hola soy una mascota de tipo '+ chuchi.tipo + ' y me llamo ' + chuchi.nombre);
+
+    var pescadito = Object.create(mascota);
+    pescadito.nombre = 'Peci'; // Modificamos la propiedad nombre de esta nueva mascota
+    pescadito.tipo = 'Pez';   // Modificamos la propiedad tipo de esta nueva mascota
+    alert('Hola soy una mascota de tipo '+ pescadito.tipo + ' y me llamo ' + pescadito.nombre);
+    </script>
+</body>
+</html>
