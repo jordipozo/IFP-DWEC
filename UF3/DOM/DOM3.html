@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<img id="imagen" style="margin: 10px;; border: 0px;" src="logo.png" />
+    <script type="text/javascript">
+            var imagen = document.getElementById("imagen");
+            alert('Valor del margen de la imagen: '+ imagen.style.margin); //obtenemos la propiedad margin
+            alert('Valor del borde de la imagen: '+ imagen.style.border); //obtenemos la propiedad border
+    </script>
+<p id="parrafo" style="font-weight: bold;">Texto con fuente en negrita (bold).</p>
+    <script type="text/javascript">
+        var parrafo = document.getElementById("parrafo");
+        alert('Formato de la fuente del parrafo: '+parrafo.style.fontWeight);  // muestra "bold"
+     </script>    
+
+<p id="parrafo2" class="normal">La clase de este texto se denomina 'normal'</p>
+<script type="text/javascript">
+    var parrafo2 = document.getElementById("parrafo2");
+            alert('Valor usando "class": ' + parrafo2.class); // muestra "undefined"
+            alert('Valor usando "classname": ' + parrafo2.className); // muestra "normal"
+     </script>
+       
+</body>
+</html>

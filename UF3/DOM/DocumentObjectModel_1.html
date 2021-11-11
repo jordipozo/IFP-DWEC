@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentObjectModel</title>
+</head>
+<body>
+    <a href="https://es.wikipedia.org">Wikipedia</a>
+    </br>
+    <a href="https://es.tutrabajo.org">Tu Trabajo</a>
+    <script type="text/javascript">
+        var enlace = document.getElementsByTagName('a'); //Acceso a nodo tipo <a>, que es un vector de nodos
+        alert(enlace[0].href);// mostrando la URL  https://es.w...
+        alert(enlace[1].href);   
+        
+    </script>
+</body>
+</html>
