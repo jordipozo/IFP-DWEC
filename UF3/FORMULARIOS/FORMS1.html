@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de pruebas con formularios</title>
+</head>
+<body>
+
+   <!-- EVENTO ONCLICK  -->
+    <!-- <form id='frmdireccion'>
+        Nombre:  <input type="text" id="nombre" ><br />
+        Telefono: <input type="text" id="telef" ><br />
+        E-mail: <input type="text" id="email" ><br />  
+        Nombre2:  <input type="text"  name="nombre2"><br />
+        Telefono2: <input type="text"  name="telef2"><br />
+        E-mail2: <input type="text"  name="email2"><br />          
+        <button type="button" name="boton1" onclick='leerForm()'>Envía</button>
+    </form>
+    <script type="text/javascript">
+        function leerForm(){
+           var name=  document.getElementById("nombre").value ;
+           var phone = document.getElementById("telef").value;
+           var mail= document.getElementById("email").value;
+    
+           alert('Nombre: '+name+'\n'+'Tel: '+phone+'\n'+'Correo: '+mail);
+
+           var name2=  document.getElementsByName("nombre2")[0].value ;
+           var phone2 = document.getElementsByName("telef2")[0].value;
+           var mail2= document.getElementsByName("email2")[0].value;
+    
+           alert('Nombre2: '+name2+'\n'+'Tel2: '+phone2+'\n'+'Correo2: '+mail2);
+        }
+    </script> -->
+
+   <!-- EVENTO ONCHANGE  -->
+<p>Selecciona un coche.</p>
+
+<select id="Selector" onchange="miFuncion()"> 
+  <option value="Audi">Audi</option>
+  <option value="BMW">BMW</option>
+  <option value="Mercedes">Mercedes</option>
+  <option value="Volvo">Volvo</option>
+</select>
+
+
+<script>
+function miFuncion() {
+  var coche = document.getElementById("Selector").value;
+  var indiceSelector = document.getElementById("Selector").selectedIndex;
+  var posicionLista = parseInt(indiceSelector)+1;
+  alert("Acabas de seleccionar: " + coche +" que tiene el índice: " + indiceSelector+" y está en la posición "+ posicionLista + " de la lista");
+
+}
+</script>  
+   <!-- EVENTO ONFOCUS  -->
+<!-- Escribe tu nombre: <input type="text" onfocus="miFuncionFoco(this)">
+
+<p>Cuando el campo de texto recibe el foco, se lanza una función que cambia el color de fondo</p>
+
+<script>
+function miFuncionFoco(x) {
+  x.style.background = "yellow";
+}
+</script> -->
+
+   <!-- EVENTO ONBLUR  -->
+<!-- Escribe tu nombre: <input type="text" id="fname" onblur="miFuncionBlur()">
+
+<p>Cuando el elemento pierde el foco (salimos de él tabulando, p.ej.), lanzamos una función que cambia el texto del campo a mayúsculas.</p>
+
+<script>
+function miFuncionBlur() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script> -->
+
+</body>
+</html>

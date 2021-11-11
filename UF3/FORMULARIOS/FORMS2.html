@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        function cambiaColor() { 
+               var i 
+               for (i = 0; i < document.fcolores.colorin.length; i++){ 
+                  if (document.fcolores.colorin[i].checked) {
+                     break; 
+                 }
+               } 
+               document.bgColor = document.fcolores.colorin[i].value 
+        } 
+        </script> 
+        </head>
+        
+        <body> 
+            <!-- RADIO BUTTON -->
+        <form name=fcolores> 
+            <input type="Radio" name="colorin" value="ffffff" checked> Blanco<br> 
+            <input type="Radio" name="colorin" value="ff0000"> Rojo<br> 
+            <input type="Radio" name="colorin" value="00ff00"> Verde<br> 
+            <input type="Radio" name="colorin" value="0000ff"> Azul<br> 
+            <input type="Radio" name="colorin" value="ffff00"> Amarillo<br> 
+            <input type="Radio" name="colorin" value="40e0d0"> Turquesa<br> 
+            <input type="Radio" name="colorin" value="ff00ff"> Morado<br> 
+            <input type="Radio" name="colorin" value="000000"> Negro<br> 
+            <br> 
+            <input type="Button" value="Cambia Color" onclick="cambiaColor()"> 
+        </form> 
+</body>
+</html>
