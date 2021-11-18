@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugando con parrafos</title>
+</head>
+<body>
+    <p id="miP1" onclick='ocultar(id)'> Párrafo numero 1</p>
+
+    <input type="button" value="Volver a mostrar" onclick="volverAMostrar('miP1')" />
+    <input type="button" value="Crear nuevo parrafo" onclick="crearParrafo()" />
+    <input type="button" value="Crear nuevo parrafo encima" onclick="crearParrafoAntes()" />
+</body>
+<script type="text/javascript">
+    // Funcion para ocultar elemento
+function ocultar(miID){
+
+	document.getElementById(miID).hidden=true;
+
+}
+
+// Funcion para mostrar elemento
+function volverAMostrar(miID){
+
+    document.getElementById(miID).hidden=false;
+
+}
+
+function crearParrafo(){
+        // Crear nodo de tipo Element
+        var parrafo = document.createElement("p");
+        
+        // Crear nodo de tipo Text
+        var contenido = document.createTextNode("Hola Mundo!");
+        
+        // Añadir el nodo Text como hijo del nodo Element
+        parrafo.appendChild(contenido);
+        parrafo.setAttribute("id","nuevoParrafo"); // añadimos atributo id=nuevoParrafo
+        
+        // Añadir el nodo Element como hijo de la página
+        document.body.appendChild(parrafo);
+}
+function crearParrafoAntes(){
+    // Creamos el nuevo párrafo
+    var nuevo_parrafo = document.createElement('p').appendChild(document.createTextNode('Nuevo párrafo.'));
+    
+    // Recojemos en una variable el segundo párrafo
+    var segundo_p = document.getElementById('miP1');
+    
+    // Y ahora lo insertamos
+    document.body.insertBefore(nuevo_parrafo,segundo_p);
+}           
+
+</script>
+</html>

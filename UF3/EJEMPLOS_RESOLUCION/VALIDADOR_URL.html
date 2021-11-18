@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 3</title>
+</head>
+<body>
+    <form id="urlValidator">
+        Introduce tu URL
+        <input type="text" id="url">
+        <button type="button" id="botón1" onclick="validarURL(url)">Validar URL</button>
+    </form>
+    <script type="text/javascript">
+        function validarURL(url) {
+            var listaServidores = ["terra.es", "yahoo.es", "google.com", "marca.es"];
+            var regex =/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+            
+            var url=document.getElementById("url").value;
+            if (!regex.test(url)){
+                alert('Formato de url incorrecto');
+            } else{
+                // regex=listaServidores[i];
+                // if (url.match(regex)){
+                alert('Formato de url correcto.');
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugando con otros controles</title>
+</head>
+<body>
+    <form id="miForm">
+        <select id="s1" onchange="actualizar()">
+            <option>Sin selección</option>
+            <option value="1">Huevo</option>
+            <option value="2">Harina</option>
+            <option value="3">Arroz</option>
+        </select>
+        <select id="s2">
+            <option>Sin selección</option>
+        </select>
+    </form> 
+    <script type="text/javascript">
+        function actualizar(){
+            var s1=document.getElementById("s1");
+            var s2=document.getElementById("s2");
+            // Obtenemos el valor del seleccionado
+            var ind=s1.selectedIndex; //obtenemos el índice del elemento seleccionado del combobox
+            var val=s1.options[ind].value; //obtenemos el valor del elemento con indice = val
+
+            if(val=="1"){
+                // Cambiamos HTML de s2
+                s2.innerHTML="<option>Ninguno seleccionado</option><option>Tortilla</option><option>Huevo frito</option><option>Huevo Duro</option>";
+                // innerHTML --> Esta propiedad proporciona una forma sencilla de cambiar completamente los contenidos de un elemento por contenido nuevo.
+            }
+            else if(val=="2"){
+                // Cambiamos HTML de s2
+                s2.innerHTML="<option>Ninguno seleccionado</option><option>Croqueta</option><option>San Jacobo</option><option>Patatas revolconas</option>";
+                
+            }
+            else if(val=="3"){
+                // Cambiamos HTML de s2
+                s2.innerHTML="<option>Ninguno seleccionado</option><option>Paella</option><option>Arroz blanco</option><option>Arroz tres delicias</option>";
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
