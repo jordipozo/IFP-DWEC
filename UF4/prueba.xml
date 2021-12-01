@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios> 
+    <usuario id="1">
+        <nombre>José</nombre>
+        <apellido1>Perez</apellido1>
+        <apellido2>Martin</apellido2>
+        <direccion>Calle Pez, 5</direccion>
+        <cpostal>12345</cpostal>
+        <municipio>Valladolid</municipio>
+        <aficiones>
+            <aficion>pescar</aficion>
+            <aficion>baloncesto</aficion>
+            <aficion>modelismo</aficion>
+        </aficiones>
+    </usuario>
+    <usuario id="2">
+        <nombre>Juan</nombre>
+        <apellido1>Lopez</apellido1>
+        <apellido2>Gil</apellido2>
+        <direccion>Calle Esperanza, 7</direccion>
+        <cpostal>12345</cpostal>
+        <municipio>Palencia</municipio>
+        <aficiones>
+            <aficion>futbol</aficion>
+            <aficion>ajedrez</aficion>
+        </aficiones>
+    </usuario>
+</usuarios>

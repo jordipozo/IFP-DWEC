@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafoPrueba" style="font-size:40px"> En un lugar de la Mancha de cuyo nombre no quiero acordarme</p>
+    <button onclick="masFuente()">Aumentar tamaño fuente</button>
+    <button onclick="menosFuente()">Disminuir tamaño fuente</button>
+</body>
+    <script type="text/javascript">
+        function masFuente(){
+            let elemento = document.getElementById('parrafoPrueba');
+            let tletra = elemento.style.fontSize;
+            tletra = tletra.substring(0, tletra.length-2);
+            tletra = parseInt(tletra) + 10;
+            elemento.style.setProperty('font-size', tletra.toString()+'px');
+        }
+    </script>
+</html>

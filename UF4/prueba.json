@@ -1,0 +1,20 @@
+{ 
+   "usuario1":{ 
+        "nombre":"José",
+        "apellido1":"Perez",
+        "apellido2":"Martin",
+        "direccion":"Calle Pez, 5",
+        "cpostal":"12345",
+        "municipio":"Valladolid",
+        "aficiones":["pescar","baloncesto","modelismo"]
+    },
+    "usuario2":{ 
+        "nombre":"Juan",
+        "apellido1":"Lopez",
+        "apellido2":"Gil",
+        "direccion":"Calle Esperanza, 7",
+        "cpostal":"12345",
+        "municipio":"Palencia",
+        "aficiones":["futbol","ajedrez"]
+    }
+}

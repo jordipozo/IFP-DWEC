@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="" name="formulario">
+    <p>ESCRIBE TU DNI</p><br />
+    DNI:  <input type="text" id="dni" onblur='letraDNI()'><br />
+    <button type="button" name="boton1" onclick='validarFormat()'>Validar</button>
+</form>
+</body>
+<script>
+    function letraDNI() {
+
+        var dniInput = document.getElementById("dni");
+        //dniInput.value = dniInput.value.toUpperCase();
+        var letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+        var letra = letras.charAt(dniInput.value.substring(0, 8) % 23);
+        //alert(letra);
+        var dniValido = dniInput.value.substring(0, 8) + letras.charAt(dniInput.value.substring(0, 8) % 23);
+        //alert(dniInput.value + "\n" + dniValido);
+
+        if (dniInput.value.toUpperCase() != dniValido) {
+
+            dniInput.value = "letra incorrecta";
+            alert("la combinación válida es :"+dniValido);
+
+        }//else{alert("ok")}
+    }
+    function validarFormat() {
+        var dniInput = document.getElementById("dni").value;
+
+        var regex = /^\d{8}[a-zA-Z]$/;
+
+        if (regex.test(dniInput)) {
+            alert("Formato dni válido");
+        } else {
+            alert("Formato dni inválido"); 
+        }
+    }
+</script>
+</html>

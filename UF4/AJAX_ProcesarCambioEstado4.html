@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesar Cambio de Estado (4)</title>
+
+</head>
+<body>
+    <p>Prueba mensajes</p>
+</body>
+<script text="text/javascript">
+    if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+
+        httpRequest = new XMLHttpRequest();
+        console.log("Objeto creado a partir de XMLHttpRequest.");
+    } else if (window.ActiveXObject) { // IE 6 i anteriors
+        httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        console.log("Objeto creado a partir de ActiveXObject.");
+    } else {
+        console.error("Error: Este navegador no admite AJAX.");
+    }
+     
+    httpRequest.onload = procesarRespuesta();
+     
+    httpRequest.open('GET', 'provincias.xml', true);
+    httpRequest.send(null);
+     
+    function procesarRespuesta() {
+        var respuesta = httpRequest.responseText;
+        let elementDiv = document.createElement('div');
+        elementDiv.innerHTML = respuesta;
+        document.body.appendChild(elementDiv);
+    }
+    </script>
+</html>

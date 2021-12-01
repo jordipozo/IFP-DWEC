@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de párrafos</title>
+    <script type="text/javascript">
+        var contador = 1
+    
+        function crearParrafo(parrafoOriginal) {
+            var parrafoNuevo = document.createElement("p");
+            var textoParrafo = document.createTextNode("Soy el parrafo hijo "+contador);
+            parrafoNuevo.className = 'parrafoNuevo'; parrafoNuevo.appendChild(textoParrafo); parrafoOriginal.appendChild(parrafoNuevo);
+            contador = contador +1;
+
+        }
+
+        function eliminarParrafo() {
+        
+            var parrafoAEliminar = document.querySelectorAll('.parrafoNuevo');
+            if (parrafoAEliminar.length>0) { 
+                var parrafoABorrar = parrafoAEliminar[parrafoAEliminar.length-1]; 
+                parrafoABorrar.parentNode.removeChild(parrafoABorrar);
+                contador = contador -1;
+            }
+        
+         }
+    </script>  
+</head>
+<body>
+    <p id="parrafoRaiz" onclick="crearParrafo(this)">Contenido inicial es este texto</p> 
+    <p id="contenedor">    
+    <p id ="atras" onclick="crearParrafo(document.querySelector('#parrafoRaiz'))"> Añadir </p>    
+    <p id="adelante" onclick="eliminarParrafo()" > Eliminar </p>    
+    </p>
+</body>
+</html>
