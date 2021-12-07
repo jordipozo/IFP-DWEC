@@ -1,0 +1,14 @@
+<provincias>
+    <provincia>
+        <nombre>Valladolid</nombre>
+        <cpostal>47001</cpostal>
+    </provincia>
+    <provincia>
+        <nombre>Avila</nombre>
+        <cpostal>47002</cpostal>
+    </provincia>
+    <provincia>
+        <nombre>Zamora</nombre>
+        <cpostal>47003</cpostal>
+    </provincia>
+</provincias>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cargar fichero provincias.xml</title>
+    <script>
+        cargarDatos('provincias.xml');
+        
+        function cargarDatos(url) {
+            if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+
+                httpRequest = new XMLHttpRequest();
+            } else if (window.ActiveXObject) { // IE 6 y anteriores
+                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            } else {
+                console.error("Error: Este navegador no admite AJAX.");
+            }
+            
+            httpRequest.onload = procesarRespuesta;            
+            httpRequest.open('GET', url, true);
+            httpRequest.send(null);
+        }
+        
+        function procesarRespuesta() {
+            var Respuesta = httpRequest.responseXML;
+            var provincias = Respuesta.querySelectorAll('provincia');
+            var tabla = generarTabla();
+            for (var i = 0; i < provincias.length; i++) {
+                var fila = generarFila(provincias[i]);
+                tabla.appendChild(fila);
+            }
+            document.body.appendChild(tabla);
+        }
+        
+        function generarTabla() {
+            var tabla = document.createElement('table');
+            var cabecera = document.createElement('tr');
+
+            var colNombre = generarColumna("Nombre", true);
+            cabecera.appendChild(colNombre);
+            
+            var colCpost = generarColumna("C.Postal", true);
+            cabecera.appendChild(colCpost);
+                    
+            tabla.appendChild(cabecera);
+            
+            return tabla;
+        }
+        
+        function generarFila(node) {
+            var fila = document.createElement('tr');
+            
+            var nombre = node.querySelector('nombre').textContent;
+            var colNombre = generarColumna(nombre);
+            fila.appendChild(colNombre);
+            
+            var cpostal = node.querySelector('cpostal').textContent;
+            var colCpost = generarColumna(cpostal);
+            fila.appendChild(colCpost);
+            
+            
+            return fila;
+        }
+        
+        function generarColumna(contenido, esCabecera) {
+            var columna;
+            if (esCabecera) {
+                columna = document.createElement('th');
+            } else {
+                columna = document.createElement('td');
+            }
+            columna.innerHTML = contenido;
+            return columna;
+        }
+    </script>
+</head>
+</html>

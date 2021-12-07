@@ -1,0 +1,16 @@
+{ 
+    "provincias":[ 
+        {
+        "nombre":"Valladolid",
+         "cpostal":"47001"
+        },
+        { 
+        "nombre":"Avila",
+        "cpostal":"47002"
+        },
+        { 
+        "nombre":"Zamora",
+        "cpostal":"47003"
+        }
+    ]
+ }

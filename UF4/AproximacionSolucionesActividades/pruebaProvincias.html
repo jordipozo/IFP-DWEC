@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <style>
+  table,th,td {
+    border : 1px solid black;
+    border-collapse: collapse;
+  }
+  th,td {
+    padding: 5px;
+  }
+  </style>
+<body>
+
+<button type="button" onclick="cargarDatos()">Mostrar tabla</button>
+<br><br>
+<table id="tablaProv"></table>
+
+<script>
+    
+function cargarDatos() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      crearTabla(this);
+    }
+  };
+
+    xmlhttp.open("GET", "provincias.xml", true);
+    xmlhttp.send();
+}
+
+
+function crearTabla(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  
+  var x = xmlDoc.getElementsByTagName("provincia");
+  var name;
+  var cpostal;
+
+  var table = document.createElement("table");
+  var tblBody=document.createElement("tbody");
+
+  //Creamos encabezado
+  var row1=document.createElement("tr");
+  td1=document.createElement("td");
+  td1.appendChild(document.createTextNode("Nombre"));
+  td2=document.createElement("td");
+  td2.appendChild(document.createTextNode("C.Postal"));
+
+  row1.appendChild(td1);
+  row1.appendChild(td2);
+
+
+  table.appendChild(row1);
+
+  for (i = 0; i <x.length; i++) { 
+
+    var row= document.createElement("tr");
+    name=x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+    cpostal=x[i].getElementsByTagName("cpostal")[0].childNodes[0].nodeValue; 
+
+    var cell = document.createElement("td");
+    var txtCell = document.createTextNode(name);
+    cell.appendChild(txtCell);
+    row.appendChild(cell);
+
+    var cell1=document.createElement("td");
+    var txtCell1 = document.createTextNode(cpostal);
+    cell1.appendChild(txtCell1);
+    row.appendChild(cell1);
+
+    tblBody.appendChild(row);
+  }
+  table.appendChild(tblBody);
+
+  document.getElementById("tablaProv").appendChild(table);
+}
+</script>
+
+</body>
+</html>
