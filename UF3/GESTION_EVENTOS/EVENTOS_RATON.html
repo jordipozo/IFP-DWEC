@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Eventos 1 - EVENTOS DEL RATÓN</title>
+    <script type="text/javascript">
+        function funcion1(){
+            alert ("Has pulsado sobre el logo de flash");
+        }
+        function funcion2(){
+            alert ("Has hecho doble click sobre el logo de iron man");
+        }
+        function funcion3(){
+            alert ("Has pasado el ratón sobre el logo de superman");
+        }
+        function funcion4(){
+            alert ("Estas presionando una tecla sobre greenlantern");
+        }
+        function funcion5(){
+            alert ("Has pulsado una tecla sobre batman");
+        }
+        function funcion6(){
+            alert ("Has soltado una tecla sobre black panther");
+        }
+    </script>
+</head>
+<body>
+    <!-- Captura eventos del ratón -->
+    <img src="logoflash.png" onclick="funcion1()">
+    <img src="logoironman.png" ondblclick="funcion2()"> 
+    <img src="logosuperman.png" onmouseover="funcion3()">
+</body>
+</html>

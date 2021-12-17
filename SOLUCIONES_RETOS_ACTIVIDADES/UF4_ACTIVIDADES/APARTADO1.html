@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cargar fichero alumnos.xml</title>
+    <script>
+        cargarDatos('alumnos.xml');
+        
+        function cargarDatos(url) {
+            if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+
+                httpRequest = new XMLHttpRequest();
+            } else if (window.ActiveXObject) { // IE 6 y anteriores
+                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            } else {
+                console.error("Error: Este navegador no admite AJAX.");
+            }
+            
+            httpRequest.onload = procesarRespuesta;            
+            httpRequest.open('GET', url, true);
+            httpRequest.send(null);
+        }
+        
+        function procesarRespuesta() {
+            var Respuesta = httpRequest.responseXML;
+            var alumnos = Respuesta.querySelectorAll('alumno');
+            var tabla = generarTabla();
+            for (var i = 0; i < alumnos.length; i++) {
+                var fila = generarFila(alumnos[i]);
+                tabla.appendChild(fila);
+            }
+            document.body.appendChild(tabla);
+        }
+        
+        function generarTabla() {
+            var tabla = document.createElement('table');
+            var cabecera = document.createElement('tr');
+            
+            var colNombre = generarColumna("Nombre", true);
+            cabecera.appendChild(colNombre);
+            
+            var colApellido = generarColumna("Apellido", true);
+            cabecera.appendChild(colApellido);
+            
+            var colNota = generarColumna("Nota", true);
+            cabecera.appendChild(colNota);
+            
+            var colConvocatoria = generarColumna("Convocatoria", true);
+            cabecera.appendChild(colConvocatoria);
+            
+            tabla.appendChild(cabecera);
+            
+            return tabla;
+        }
+        
+        function generarFila(node) {
+            var fila = document.createElement('tr');
+            
+            var nombre = node.querySelector('nombre').textContent;
+            var apellido = node.querySelector('apellido').textContent;
+            var nota = node.querySelector('nota').textContent;
+            var convocatoria = node.querySelector('nota').getAttribute('convocatoria');
+            
+            var colNombre = generarColumna(nombre);
+            fila.appendChild(colNombre);
+            
+            var colApellido = generarColumna(apellido);
+            fila.appendChild(colApellido);
+            
+            var colNota = generarColumna(nota);
+            fila.appendChild(colNota);
+            
+            var colConvocatoria = generarColumna(convocatoria);
+            fila.appendChild(colConvocatoria);
+            
+            return fila;
+        }
+        
+        function generarColumna(contenido, esCabecera) {
+            var columna;
+            if (esCabecera) {
+                columna = document.createElement('th');
+            } else {
+                columna = document.createElement('td');
+            }
+            columna.innerHTML = contenido;
+            return columna;
+        }
+    </script>
+</head>
+</html>

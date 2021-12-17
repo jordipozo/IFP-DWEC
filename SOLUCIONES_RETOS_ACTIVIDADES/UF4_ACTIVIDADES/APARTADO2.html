@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+    <meta charset="utf-8">
+        <script>
+        cargarDatos('alumnos.html');
+        
+        function cargarDatos(url) {
+            if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+
+                httpRequest = new XMLHttpRequest();
+            } else if (window.ActiveXObject) { // IE 6 y anteriores
+                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            } else {
+                console.error("Error: Este navegador no admite AJAX.");
+            }
+            
+            httpRequest.onload = procesarRespuesta;
+            
+            httpRequest.open('GET', url, true);
+            httpRequest.overrideMimeType('text/html');
+            httpRequest.send(null);
+        }
+        
+        function procesarRespuesta() {
+            var respuesta = httpRequest.responseText;
+            var contenido = document.createElement('div');
+            contenido.innerHTML = respuesta;
+            document.body.appendChild(contenido);
+        }
+        
+        </script>
+    </head>
+</html>
