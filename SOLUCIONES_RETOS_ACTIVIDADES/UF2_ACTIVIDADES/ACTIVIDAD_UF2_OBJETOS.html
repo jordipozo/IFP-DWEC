@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVIDAD 2 - OBJETOS</title>
+    <script type="text/javascript">
+
+
+        // Apartado 1
+        
+                function mediaAula(colegio){
+                    return ("La media de alumnos por aula de la "+colegio.nombre+" es de : "+colegio.numeroAlumnos/colegio.numeroAulas);
+                }
+        
+                function Colegio(nombre, numeroAulas, numeroAlumnos){
+                    this.nombre = nombre;
+                    this.numeroAulas = numeroAulas;
+                    this.numeroAlumnos = numeroAlumnos;
+                }
+        
+                    var colegio1 = new Colegio("IFP", 3, 45);
+                    alert(mediaAula(colegio1));
+        
+        
+                function mediaAlumno(alumno){
+                    return ("La nota media de "+alumno.nombre+" es: "+alumno.notaMedia+"\n");
+                    
+                }    
+        
+                function Alumno(DNI, nombre, notaMedia){
+                    this.DNI = DNI;
+                    this.nombre = nombre;
+                    this.notaMedia = notaMedia;
+                }
+           
+                    var alumno1 = new Alumno("012345678B", "PEPE PEREZ", 8);
+                    
+                    alert(mediaAlumno(alumno1));  
+        
+                    
+        
+        // Apartado 2
+        
+        
+        
+                    function Aeropuerto(nombre, ciudad, numeroVuelosDiarios){
+                        this.nombre = nombre;
+                        this.ciudad = ciudad;
+                        this.numeroVuelosDiarios = numeroVuelosDiarios;
+                    }
+        
+                    function hora_salida(vuelo){
+                        return ("Hora de salida: "+vuelo.hora_salida);
+                    }
+        
+                    function hora_llegada(vuelo){
+                        return ("Hora de llegada: "+vuelo.hora_llegada);
+                    }
+        
+                    function comprobar_hora(vuelo){
+                        if(vuelo.hora_llegada<vuelo.hora_salida){
+                            return ("Error, la hora de llegada debe ser posterior a la de salida");
+                        }
+                        else {
+                            return ("Hora de salida y llegada correctas");
+                        }
+                    }
+        
+                    function Vuelo(codigo, hora_llegada, hora_salida){
+                        this.codigo = codigo;
+                        this.hora_llegada = hora_salida;
+                        this.hora_salida = hora_llegada;
+                        this.comprobar_hora = comprobar_hora;
+                    }
+        
+                    var vuelo1 = new Vuelo(1, 12, 17);
+                    alert (hora_salida(vuelo1)+"\n"+hora_llegada(vuelo1)+"\n"+comprobar_hora(vuelo1));
+                 
+        
+    </script>        
+
+</head>
+<body>
+    
+</body>
+</html>

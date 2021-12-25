@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVIDAD 2 - EJERCICIO ARRAYS</title>
+    <script type="text/javascript">
+
+        // Apartado 1 
+        var jugadores = [];
+         for(let i=0; i<11; i++){
+            let nombre = prompt("Introduce el nombre del jugador con el dorsal "+[i+1]);
+            let dorsal = i+1;
+            jugadores.push(dorsal+" - "+nombre+"\n");                           
+        }
+
+        alert(jugadores) ;
+
+
+         // Apartado 2 
+
+        var jugadores =[];
+
+        for(let i=0; i<11; i++){
+            let nombre = prompt("Introduce el nombre del jugador con el dorsal "+[i+1]);
+            let dorsal = i+1;
+            if(i == 0){
+                jugadores.push(dorsal+" - "+nombre+" - "+"Portero"+"\n");
+            }else if(i>=1 && i<=4){
+                jugadores.push(dorsal+" - "+nombre+" - "+"Defensa"+"\n");
+            }else if(i>=5 && i<=7){
+                jugadores.push(dorsal+" - "+nombre+" - "+"Medio"+"\n");
+            }else{
+                jugadores.push(dorsal+" - "+nombre+" - "+"Delantero"+"\n");
+            }
+           
+        }
+
+        alert(jugadores) ;
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

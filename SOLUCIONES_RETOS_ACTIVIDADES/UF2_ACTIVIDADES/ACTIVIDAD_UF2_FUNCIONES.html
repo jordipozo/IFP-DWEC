@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVIDAD 2 - FUNCIONES</title>
+    <script type="text/javascript">
+
+        // Apartado 1
+        function letraDNI(dni){
+
+            var dni = prompt('Introduce DNI sin letra');
+            var letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+            return dni+letras.charAt(dni % 23);
+     
+        }
+
+        alert(letraDNI());
+
+        //Apartado 2
+        function retornaPalabra(palabra,numero){
+
+            var palabra = prompt("Introduce palabra");
+            var numero = prompt("Introduce número");
+
+
+            if(numero=='1'){
+                result = palabra.toUpperCase();
+            }else{ 
+                result = palabra.toLowerCase();
+            }
+
+            return result;
+        }
+
+        alert(retornaPalabra());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
