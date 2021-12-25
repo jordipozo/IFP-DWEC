@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETO UF 2</title>
+
+    <script type="text/javascript"> 
+    // OPCION 1 - GESTOR DE DISCOS DE MÚSICA
+
+
+                function cambiaLocalizacion(){
+                    nuevaLocalizacion=prompt('Dame la nueva localizacion');
+                    this.localizacion = nuevaLocalizacion;
+                }
+
+                function cambiaPrestado(){
+                        if (this.prestado == true) {
+                            this.prestado = false;
+                        }else{
+                            this.prestado = true;
+                        }
+                }
+
+                function muestraInfo(){
+                    alert("Nombre: "+ this.nombreDisco +"\n"+"Grupo: "+ this.grupoMusical +"\n"+"Año publ.: "+ this.annoPublicacion +"\n"+"Género: "+ this.generoMusical +"\n"
+                    +"Localiz.: "+ this.localizacion +"\n"+"Prestado: "+ this.prestado +"\n");
+                }
+
+                // Creación del objeto gestorDiscos - Constructor con parámetros
+                function gestorDiscos(nombreDisco, grupoMusical, annoPublicacion, generoMusical, localizacion, prestado){
+                    this.nombreDisco = nombreDisco;
+                    this.grupoMusical = grupoMusical;
+                    this.annoPublicacion = annoPublicacion;
+                    this.generoMusical = generoMusical;
+                    this.localizacion = localizacion;
+                    this.prestado = prestado;
+
+                    this.cambiaPrestado= cambiaPrestado;
+                    this.muestraInfo = muestraInfo;
+                    this.cambiaLocalizacion=cambiaLocalizacion;
+
+                };
+
+                var disco0 = new gestorDiscos("My Way","Frank Sinatra","1969","Swing","SWG-10/69","false");
+
+                alert(disco0.muestraInfo());
+                disco0.cambiaLocalizacion("SWG-45/69");
+                disco0.cambiaPrestado();
+                alert(disco0.muestraInfo());
+
+                // Creación de un disco sin parámetros. Cargamos los datos directamente y creamos las funciones-método en su interior.
+                let disco1 = {  
+                            nombreDisco: "MoonLight Shadow",
+                            grupoMusical: "Mike Olfield",
+                            annoPublicacion: "1983",
+                            generoMusical: "Pop",
+                            localizacion:"Pop-25/83",
+                            prestado:true,
+                            cambiaLocalizacion: function(){ // Método que cambia la localizacion
+                                nuevaLocalizacion=prompt('Dame la nueva localizacion');
+                                this.localizacion = nuevaLocalizacion;
+                            },
+                            cambiaPrestado: function(){ // Método que cambia la situación de préstamo
+                                if (this.prestado == true) {
+                                    this.prestado = false;
+                                }else{
+                                    this.prestado = true;
+                                }
+                            },
+                            muestraInfo: function(){ // Método que muestra toda la info del disco
+
+                                alert("Nombre: "+ this.nombreDisco +"\n"+"Grupo: "+ this.grupoMusical +"\n"+"Año publ.: "+ this.annoPublicacion +"\n"+"Género: "+ this.generoMusical +"\n"
+                                        +"Localiz.: "+ this.localizacion +"\n"+"Prestado: "+ this.prestado +"\n");
+                            
+                            }
+                }; 
+
+                disco1.muestraInfo();
+                disco1.cambiaLocalizacion();
+                disco1.cambiaPrestado();
+                disco1.muestraInfo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
